@@ -62,7 +62,12 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
+            {% if not session.logged_in %}
+            <li><a href="/login">Register</a></li>
             <li><a href="/login">Log in</a></li>
+            {% else %}
+            <li><a href="/logout">Log out</a></li>
+            {% endif %}
 <!--
             <li><a href="../navbar/">Default</a></li>
             <li><a href="../navbar-static-top/">Static top</a></li>
