@@ -12,12 +12,7 @@
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash, _app_ctx_stack
-
-# create application 
-app = Flask(__name__, instance_relative_config=True)
-#app.config.from_object(__name__)
-app.config.from_pyfile('default_settings.cfg', silent=True)
-
+from cinematchbox import app
 
 def init_db():
     """Creates the database tables."""
